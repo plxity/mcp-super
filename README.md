@@ -136,7 +136,7 @@ Then update the configuration with your actual path:
 
 1. **Build the project** (for production mode):
    ```bash
-   npm run build
+   pnpm run build:mcp
    ```
 
 2. **Restart Cursor** to load the new MCP server
