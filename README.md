@@ -33,7 +33,7 @@ src/
 
 1. **Install dependencies:**
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. **Configure environment:**
@@ -44,7 +44,7 @@ src/
 
 3. **Build the project:**
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 ## Configuration
@@ -55,34 +55,11 @@ Create a `.env` file with the following variables:
 
 ```env
 COMPOSIO_API_KEY=your_composio_api_key_here
-COMPOSIO_BASE_URL=https://api.composio.dev
-INCLUDE_SEARCH_EXECUTE_ACTIONS=true
-NODE_ENV=development
-LOG_LEVEL=info
 ```
 
 ### Server Configuration
 
 The default configuration includes popular apps like GitHub, Gmail, Slack, Notion, and Calendar. You can customize this in `src/config/server-config.ts`:
-
-```typescript
-export const defaultServerConfig: ServerConfig = {
-  name: 'mcp-super-server',
-  version: '1.0.0',
-  tools: [
-    {
-      appName: 'github',
-      useHelperActions: true,
-    },
-    {
-      appName: 'gmail',
-      actions: ['GMAIL_SEND_EMAIL', 'GMAIL_GET_EMAILS'], // Specific actions
-      useHelperActions: true,
-    },
-    // Add more apps as needed
-  ],
-};
-```
 
 ## Usage
 
@@ -90,13 +67,13 @@ export const defaultServerConfig: ServerConfig = {
 
 **Development mode:**
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 **Production mode:**
 ```bash
-npm run build
-npm run mcp
+pnpm run build:mcp
+pnpm run mcp
 ```
 
 ### Using with Cursor IDE
@@ -128,26 +105,6 @@ Add this configuration to your Cursor `settings.json`:
     "mcp-super": {
       "command": "node",
       "args": ["/Users/apoorvtaneja/Desktop/mcp-super/dist/mcp-server.js"],
-      "env": {
-        "COMPOSIO_API_KEY": "your_composio_api_key_here",
-        "LOG_LEVEL": "info"
-      }
-    }
-  }
-}
-```
-
-**Development Mode:**
-```json
-{
-  "mcp.servers": {
-    "mcp-super": {
-      "command": "npx",
-      "args": ["ts-node", "--esm", "/Users/apoorvtaneja/Desktop/mcp-super/src/mcp-server.ts"],
-      "env": {
-        "COMPOSIO_API_KEY": "your_composio_api_key_here",
-        "LOG_LEVEL": "debug"
-      }
     }
   }
 }
@@ -169,10 +126,7 @@ Then update the configuration with your actual path:
   "mcp.servers": {
     "mcp-super": {
       "command": "node",
-      "args": ["/your/actual/path/to/mcp-super/dist/mcp-server.js"],
-      "env": {
-        "COMPOSIO_API_KEY": "your_composio_api_key_here"
-      }
+      "args": ["/your/actual/path/to/mcp-super/build/mcp-server.js"]
     }
   }
 }

@@ -4,9 +4,8 @@
   "main": "build/mcp-server.js",
   "packageManager": "pnpm@8.15.0",
   "scripts": {
-    "build:mcp": "tsc && chmod 755 src/mcp-server.ts && node build/mcp-server.js",
-    "build:watch": "tsc --watch",
-    "dev:mcp": "tsx src/mcp-server.ts",
+    "build:mcp": "tsc && chmod 755 build/mcp-server.js",
+    "dev": "tsc --watch",
     "clean": "rm -rf build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
