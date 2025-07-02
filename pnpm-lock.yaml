@@ -20,7 +20,7 @@ importers:
         specifier: 0.1.36-next.2
         version: 0.1.36-next.2(@composio/core@0.1.36-next.2)(@langchain/core@0.3.61(openai@4.104.0(zod@3.25.67)))
       '@modelcontextprotocol/sdk':
-        specifier: ^1.13.2
+        specifier: 1.13.2
         version: 1.13.2(patch_hash=yry3dfmn3mdk3q2b2yk646onse)
       '@t3-oss/env-core':
         specifier: ^0.11.1

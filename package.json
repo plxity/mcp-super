@@ -4,7 +4,7 @@
   "main": "build/mcp-server.js",
   "packageManager": "pnpm@8.15.0",
   "scripts": {
-    "build:mcp": "tsc && chmod 755 build/mcp-server.js",
+    "build:mcp": "tsc && chmod 755 build/mcp-server.js && node build/mcp-server.js",
     "dev": "tsc --watch",
     "clean": "rm -rf build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,7 @@
   "dependencies": {
     "@composio/core": "^0.1.36-next.2",
     "@composio/langchain": "0.1.36-next.2",
-    "@modelcontextprotocol/sdk": "^1.13.2",
+    "@modelcontextprotocol/sdk": "1.13.2",
     "@t3-oss/env-core": "^0.11.1",
     "zod": "^3.25.67"
   },
