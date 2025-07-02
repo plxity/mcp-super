@@ -16,7 +16,6 @@ A clean, modular MCP (Model Context Protocol) server implementation with Composi
 ```
 src/
 ├── lib/
-│   ├── env.ts              # Environment configuration with validation
 │   ├── logger.ts           # Logging utilities
 │   ├── types.ts            # TypeScript type definitions
 │   ├── composio.ts         # Composio client and API interactions
