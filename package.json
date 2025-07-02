@@ -1,0 +1,36 @@
+{
+  "name": "mcp-super",
+  "version": "1.0.0",
+  "main": "build/mcp-server.js",
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "build:mcp": "tsc && chmod 755 src/mcp-server.ts && node build/mcp-server.js",
+    "build:watch": "tsc --watch",
+    "dev:mcp": "tsx src/mcp-server.ts",
+    "clean": "rm -rf build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@composio/core": "^0.1.36-next.2",
+    "@composio/langchain": "0.1.36-next.2",
+    "@modelcontextprotocol/sdk": "^1.13.2",
+    "@t3-oss/env-core": "^0.11.1",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@modelcontextprotocol/sdk@1.13.2": "patches/@modelcontextprotocol__sdk@1.13.2.patch"
+    }
+  }
+}

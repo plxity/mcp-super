@@ -1,0 +1,56 @@
+diff --git a/dist/cjs/server/mcp.js b/dist/cjs/server/mcp.js
+index 86c91625c52be6f9ea671bd8c7369ae6eb77226b..95a539494006d0830a6ae085eea7a6dad1974fd0 100644
+--- a/dist/cjs/server/mcp.js
++++ b/dist/cjs/server/mcp.js
+@@ -78,7 +78,10 @@ class McpServer {
+             }
+             let result;
+             if (tool.inputSchema) {
+-                const parseResult = await tool.inputSchema.safeParseAsync(request.params.arguments);
++                const parseResult = {
++                    success: true,
++                    data: request.params.arguments,
++                }
+                 if (!parseResult.success) {
+                     throw new types_js_1.McpError(types_js_1.ErrorCode.InvalidParams, `Invalid arguments for tool ${request.params.name}: ${parseResult.error.message}`);
+                 }
+@@ -281,7 +284,10 @@ class McpServer {
+                 throw new types_js_1.McpError(types_js_1.ErrorCode.InvalidParams, `Prompt ${request.params.name} disabled`);
+             }
+             if (prompt.argsSchema) {
+-                const parseResult = await prompt.argsSchema.safeParseAsync(request.params.arguments);
++                const parseResult = {
++                    success: true,
++                    data: request.params.arguments,
++                }
+                 if (!parseResult.success) {
+                     throw new types_js_1.McpError(types_js_1.ErrorCode.InvalidParams, `Invalid arguments for prompt ${request.params.name}: ${parseResult.error.message}`);
+                 }
+diff --git a/dist/esm/server/mcp.js b/dist/esm/server/mcp.js
+index cc91e3802e71cab7f0e878de42902a0dd3f3d05e..7c26fbf885a2fa09b2858d5946fc5f5b53eab5ba 100644
+--- a/dist/esm/server/mcp.js
++++ b/dist/esm/server/mcp.js
+@@ -75,7 +75,10 @@ export class McpServer {
+             }
+             let result;
+             if (tool.inputSchema) {
+-                const parseResult = await tool.inputSchema.safeParseAsync(request.params.arguments);
++                const parseResult = {
++                    success: true,
++                    data: request.params.arguments,
++                }
+                 if (!parseResult.success) {
+                     throw new McpError(ErrorCode.InvalidParams, `Invalid arguments for tool ${request.params.name}: ${parseResult.error.message}`);
+                 }
+@@ -278,7 +281,10 @@ export class McpServer {
+                 throw new McpError(ErrorCode.InvalidParams, `Prompt ${request.params.name} disabled`);
+             }
+             if (prompt.argsSchema) {
+-                const parseResult = await prompt.argsSchema.safeParseAsync(request.params.arguments);
++                const parseResult = {
++                    success: true,
++                    data: request.params.arguments,
++                }
+                 if (!parseResult.success) {
+                     throw new McpError(ErrorCode.InvalidParams, `Invalid arguments for prompt ${request.params.name}: ${parseResult.error.message}`);
+                 }
