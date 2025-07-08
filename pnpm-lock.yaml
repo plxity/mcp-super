@@ -22,9 +22,6 @@ importers:
       '@modelcontextprotocol/sdk':
         specifier: 1.13.2
         version: 1.13.2(patch_hash=yry3dfmn3mdk3q2b2yk646onse)
-      '@t3-oss/env-core':
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(zod@3.25.67)
       zod:
         specifier: ^3.25.67
         version: 3.25.67
@@ -236,15 +233,6 @@ packages:
   '@modelcontextprotocol/sdk@1.13.2':
     resolution: {integrity: sha512-Vx7qOcmoKkR3qhaQ9qf3GxiVKCEu+zfJddHv6x3dY/9P6+uIwJnmuAur5aB+4FDXf41rRrDnOEGkviX5oYZ67w==}
     engines: {node: '>=18'}
-
-  '@t3-oss/env-core@0.11.1':
-    resolution: {integrity: sha512-MaxOwEoG1ntCFoKJsS7nqwgcxLW1SJw238AJwfJeaz3P/8GtkxXZsPPolsz1AdYvUTbe3XvqZ/VCdfjt+3zmKw==}
-    peerDependencies:
-      typescript: '>=5.0.0'
-      zod: ^3.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -1136,12 +1124,6 @@ snapshots:
       zod-to-json-schema: 3.24.6(zod@3.25.67)
     transitivePeerDependencies:
       - supports-color
-
-  '@t3-oss/env-core@0.11.1(typescript@5.8.3)(zod@3.25.67)':
-    dependencies:
-      zod: 3.25.67
-    optionalDependencies:
-      typescript: 5.8.3
 
   '@tsconfig/node10@1.0.11': {}
 
