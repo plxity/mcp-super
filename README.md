@@ -35,26 +35,28 @@ src/
    pnpm install
    ```
 
-2. **Configure environment:**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your Composio API key
+2. **Get your Composio API key:**
+   - Visit [app.composio.dev](https://app.composio.dev)
+   - Sign up or log in to your account
+   - Navigate to the API keys section
+   - Generate a new API key
+
+3. **Configure the API key:**
+   - Open `src/lib/composio.ts`
+   - Replace `<YOUR_API_KEY>` with your actual Composio API key:
+   ```typescript
+   const composio = new Composio({
+     apiKey: "your-actual-api-key-here",
+     provider: new LangchainProvider(),
+   });
    ```
 
-3. **Build the project:**
+4. **Build the project:**
    ```bash
    pnpm run build
    ```
 
 ## Configuration
-
-### Environment Variables
-
-Create a `.env` file with the following variables:
-
-```env
-COMPOSIO_API_KEY=your_composio_api_key_here
-```
 
 ### Server Configuration
 
