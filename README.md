@@ -14,18 +14,20 @@ A clean, modular MCP (Model Context Protocol) server implementation with Composi
 ## Project Structure
 
 ```
-src/
-├── lib/
-│   ├── logger.ts           # Logging utilities
-│   ├── types.ts            # TypeScript type definitions
-│   ├── composio.ts         # Composio client and API interactions
-│   ├── tool-registry.ts    # Tool registration and management
-│   └── mcp-server.ts       # Core MCP server implementation
-├── config/
-│   └── server-config.ts    # Server configuration
-├── examples/
-│   └── custom-config.ts    # Example custom configuration
-└── mcp-server.ts           # Main entry point
+mcp-super/
+├── package.json            # Project dependencies and scripts
+├── pnpm-lock.yaml         # Lock file for pnpm
+├── tsconfig.json          # TypeScript configuration
+├── README.md              # This file
+├── patches/               # Package patches
+│   └── @modelcontextprotocol__sdk@1.13.2.patch
+└── src/
+    ├── lib/
+    │   ├── composio.ts         # Composio client and API interactions
+    │   ├── executionHandler.ts # Tool execution handling
+    │   ├── setupMCP.ts        # MCP server setup and configuration
+    │   └── tools.ts           # Tool definitions and schemas
+    └── mcp-server.ts          # Main entry point
 ```
 
 ## Setup
